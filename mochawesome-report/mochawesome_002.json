@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-08-08T19:43:14.537Z",
+    "end": "2022-08-08T19:43:14.693Z",
+    "duration": 156,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ec729b82-5975-423c-9049-38b44b91b224",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9b2824f1-32fc-4672-9250-dc9e34fc8e93",
+          "title": "Login - Teste da API ServeRest",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve fazer login com sucesso",
+              "fullTitle": "Login - Teste da API ServeRest Deve fazer login com sucesso",
+              "timedOut": null,
+              "duration": 80,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'POST',\n  url: 'http://localhost:3000/login',\n  body: {\n    \"email\": \"reginaspupp_qa@ebac.com.br\",\n    \"password\": \"teste\"\n  }\n}).then(response => {\n  expect(response.status).to.equal(200);\n  expect(response.body.message).to.equal('Login realizado com sucesso');\n  cy.log(response.body.authorization);\n});",
+              "err": {},
+              "uuid": "e406a05a-b9df-44c3-b192-2de4a85e3b82",
+              "parentUUID": "9b2824f1-32fc-4672-9250-dc9e34fc8e93",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e406a05a-b9df-44c3-b192-2de4a85e3b82"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 80,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
