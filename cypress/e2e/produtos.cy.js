@@ -5,7 +5,8 @@ import contrato from '../contracts/produtos.contracts'
 describe('Teste da Funcionalidade Produtos', () => {
     let token
     before(() => {
-        cy.token('reginaspupp_qa@ebac.com.br', 'teste').then(tkn => { token = tkn })
+        cy.token('fulano@qa.com', 'teste').then(tkn => { token = tkn })
+
     });
 
     it('Deve validar contrato de produtos', () => {
@@ -18,7 +19,7 @@ describe('Teste da Funcionalidade Produtos', () => {
             method: 'GET',
             url: 'produtos'
         }).then((response) => {
-            expect(response.body.produtos[0].nome).to.equal('Iphone XR')
+            expect(response.body.produtos[0].nome).to.equal('Produto EBAC 21693179')
             expect(response.status).to.equal(200)
             expect(response.body).to.have.property('produtos')
             expect(response.duration).to.be.lessThan(30)
@@ -58,10 +59,10 @@ describe('Teste da Funcionalidade Produtos', () => {
                 url: `Produtos/${id}`,
                 headers: { authorization: token },
                 body: {
-                    "nome": "Iphone XR",
-                    "preco": 4700,
-                    "descricao": "Produto editado",
-                    "quantidade": 1000
+                    "nome": "Produto EBAC 21693179",
+                    "preco": 200,
+                    "descricao": "Produto Super Novo 1",
+                    "quantidade": 100
                 }
             }).then(response => {
                 expect(response.body.message).to.equal('Registro alterado com sucesso')

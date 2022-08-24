@@ -6,7 +6,7 @@ describe('Login - Teste da API ServeRest', () => {
             method: 'POST',
             url: 'http://localhost:3000/login',
             body: {
-                "email": "reginaspupp_qa@ebac.com.br",
+                "email": "fulano@qa.com",
                 "password": "teste",
             }
 
